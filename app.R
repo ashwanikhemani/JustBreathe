@@ -152,56 +152,187 @@ body <- dashboardBody(
                       fluidRow(
                         box(width=4,
                             wellPanel(
-                              selectInput("Year1", "Select the year to visualize", years),
+                              selectInput("Item2Year1", "Select the year to visualize", years),
                               uiOutput("Item2State1"),
                               uiOutput("Item2County1")
                             )
                         ),
                         box(width=4,
                             wellPanel(
-                              selectInput("Year2", "Select the year to visualize", years),
+                              selectInput("Item2Year2", "Select the year to visualize", years),
                               uiOutput("Item2State2"),
                               uiOutput("Item2County2"))
                         ),
                         box(width=4,
                             wellPanel(
-                              selectInput("Year3", "Select the year to visualize", years),
+                              selectInput("Item2Year3", "Select the year to visualize", years),
                               uiOutput("Item2State3"),
                               uiOutput("Item2County3"))
                         )
                       ),
                       fluidRow(
-                        
-                      )
-              ),
+                        tabBox(width=4,
+                               title = "Main Pollutant ",
+                               side = "left", height = "1200",id = "Item2tabset2Cmp1",
+                               selected = "PieChart",
+                               tabPanel("Pie-CO",plotOutput("Item2pieCOCmp1", height = 1200)
+                               ),
+                               tabPanel("Pie-NO2",plotOutput("Item2pieNO2Cmp1", height = 1200)
+                               ),
+                               tabPanel("Pie-Ozone",plotOutput("Item2pieOzoneCmp1", height = 1200)
+                               ),
+                               tabPanel("Pie-SO2",plotOutput("Item2pieSO2Cmp1", height = 1200)
+                               ),
+                               tabPanel("Pie-PM2.5",plotOutput("Item2piePM2.5Cmp1", height = 1200)
+                               ),
+                               tabPanel("Pie-PM10",plotOutput("Item2piePM10Cmp1", height = 1200)
+                               ),
+                               tabPanel("BarChart",plotOutput("Item2bar2Cmp1", height = 1200)
+                               ),
+                               tabPanel("Table",dataTableOutput("Item2table2Cmp1", height = 1200)
+                               )
+                        ),
+                          tabBox(width=4,
+                                 title = "Main Pollutant ",
+                                 side = "left", height = "1200",id = "Item2tabset2Cmp2",
+                                 selected = "PieChart",
+                                 tabPanel("Pie-CO",plotOutput("Item2pieCOCmp2", height = 1200)
+                                 ),
+                                 tabPanel("Pie-NO2",plotOutput("Item2pieNO2Cmp2", height = 1200)
+                                 ),
+                                 tabPanel("Pie-Ozone",plotOutput("Item2pieOzoneCmp2", height = 1200)
+                                 ),
+                                 tabPanel("Pie-SO2",plotOutput("Item2pieSO2Cmp2", height = 1200)
+                                 ),
+                                 tabPanel("Pie-PM2.5",plotOutput("Item2piePM2.5Cmp2", height = 1200)
+                                 ),
+                                 tabPanel("Pie-PM10",plotOutput("Item2piePM10Cmp2", height = 1200)
+                                 ),
+                                 tabPanel("BarChart",plotOutput("Item2bar2Cmp2", height = 1200)
+                                 ),
+                                 tabPanel("Table",dataTableOutput("Item2table2Cmp2", height = 1200)
+                                 )
+                          ),
+                          tabBox(width=4,
+                                 title = "Main Pollutant ",
+                                 side = "left", height = "1200",id = "Item2tabset2Cmp3",
+                                 selected = "PieChart",
+                                 tabPanel("Pie-CO",plotOutput("Item2pieCOCmp3", height = 1200)
+                                 ),
+                                 tabPanel("Pie-NO2",plotOutput("Item2pieNO2Cmp3", height = 1200)
+                                 ),
+                                 tabPanel("Pie-Ozone",plotOutput("Item2pieOzoneCmp3", height = 1200)
+                                 ),
+                                 tabPanel("Pie-SO2",plotOutput("Item2pieSO2Cmp3", height = 1200)
+                                 ),
+                                 tabPanel("Pie-PM2.5",plotOutput("Item2piePM2.5Cmp3", height = 1200)
+                                 ),
+                                 tabPanel("Pie-PM10",plotOutput("Item2piePM10Cmp3", height = 1200)
+                                 ),
+                                 tabPanel("BarChart",plotOutput("Item2bar2Cmp3", height = 1200)
+                                 ),
+                                 tabPanel("Table",dataTableOutput("Item2table2Cmp3", height = 1200)
+                                 )
+                          )
+                          )
+                  ),
     tabItem(tabName = "subitem3", 
             fluidRow(
               box(width=4,
                   wellPanel(
-                    selectInput("Year1", "Select the year to visualize", years),
+                    selectInput("Item3Year1", "Select the year to visualize", years),
                     uiOutput("Item3State1"),
                     uiOutput("Item3County1")
                   )
               ),
               box(width=4,
                   wellPanel(
-                    selectInput("Year2", "Select the year to visualize", years),
+                    selectInput("Item3Year2", "Select the year to visualize", years),
                     uiOutput("Item3State2"),
                     uiOutput("Item3County2"))
               ),
               box(width=4,
                   wellPanel(
-                    selectInput("Year3", "Select the year to visualize", years),
+                    selectInput("Item3Year3", "Select the year to visualize", years),
                     uiOutput("Item3State3"),
                     uiOutput("Item3County3"))
               )
-            )        
-    )
-    
-    
-                  
+            ),
+            fluidRow(
+              tabBox(width=4,
+                     title = "AQI/Pollutant across years",
+                     side = "left", height = "400px",id = "Item3tabset3",
+                     tabPanel("AQI-Graph",plotOutput("Item3line1Cmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-Graph",plotOutput("Item3line2Cmp1", height = 1200)
+                     ),
+                     tabPanel("Map",leafletOutput("Item3leafCmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-CO",dataTableOutput("Item3tableCOCmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-NO2",dataTableOutput("Item3tableNO2Cmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-Ozone",dataTableOutput("Item3tableOzoneCmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-SO2",dataTableOutput("Item3tableSO2Cmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-PM2.5",dataTableOutput("Item3tablePM2.5Cmp1", height = 1200)
+                     ),
+                     tabPanel("Pollutant-PM10",dataTableOutput("Item3tablePM10Cmp1", height = 1200)
+                     )
+              ),tabBox(width=4,
+                       title = "AQI/Pollutant across years",
+                       side = "left", height = "400px",id = "Item3tabset3Cmp2",
+                       tabPanel("AQI-Graph",plotOutput("Item3line1Cmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-Graph",plotOutput("Item3line2Cmp2", height = 1200)
+                       ),
+                       tabPanel("Map",leafletOutput("Item3leafCmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-CO",dataTableOutput("Item3tableCOCmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-NO2",dataTableOutput("Item3tableNO2Cmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-Ozone",dataTableOutput("Item3tableOzoneCmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-SO2",dataTableOutput("Item3tableSO2Cmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-PM2.5",dataTableOutput("Item3tablePM2.5Cmp2", height = 1200)
+                       ),
+                       tabPanel("Pollutant-PM10",dataTableOutput("Item3tablePM10Cmp2", height = 1200)
+                       )
+              ),
+              tabBox(width=4,
+                     title = "AQI/Pollutant across years",
+                     side = "left", height = "400px",id = "Item3tabset3Cmp3",
+                     tabPanel("AQI-Graph",plotOutput("Item3line1Cmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-Graph",plotOutput("Item3line2Cmp3", height = 1200)
+                     ),
+                     tabPanel("Map",leafletOutput("Item3leafCmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-CO",dataTableOutput("Item3tableCOCmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-NO2",dataTableOutput("Item3tableNO2Cmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-Ozone",dataTableOutput("Item3tableOzoneCmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-SO2",dataTableOutput("Item3tableSO2Cmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-PM2.5",dataTableOutput("Item3tablePM2.5Cmp3", height = 1200)
+                     ),
+                     tabPanel("Pollutant-PM10",dataTableOutput("Item3tablePM10Cmp3", height = 1200)
+                     )
+              )
+              
+              
             )
-      )
+        )
+    
+    
+                
+)
+)
 
 
 sidebar <-dashboardSidebar(disable = FALSE, collapsed = FALSE,
@@ -245,6 +376,37 @@ output$State3 <- renderUI({selectInput("State3", "Select the third State to visu
 listCountiesCmp3 <- reactive(unique(allData[allData$State==input$State3 & allData$Year==input$Year3,]['County']))
 output$County3 <- renderUI({selectInput("County3", "Select the third county to visualize", listCountiesCmp3())})
 
+
+listStatesItem2Cmp1 <- reactive(unique(allData[allData$Year==input$Item2Year1,]['State']))
+output$Item2State1 <- renderUI({selectInput("Item2State1", "Select the first State to visualize", listStatesItem2Cmp1())})
+listCountiesItem2Cmp1 <- reactive(unique(allData[allData$State==input$Item2State1 & allData$Year==input$Item2Year1,]['County']))
+output$Item2County1 <- renderUI({selectInput("Item2County1", "Select the first county to visualize", listCountiesItem2Cmp1())})
+
+listStatesItem2Cmp2 <- reactive(unique(allData[allData$Year==input$Item2Year2,]['State']))
+output$Item2State2 <- renderUI({selectInput("Item2State2", "Select the second State to visualize", listStatesItem2Cmp2())})
+listCountiesItem2Cmp2 <- reactive(unique(allData[allData$State==input$Item2State2 & allData$Year==input$Item2Year2,]['County']))
+output$Item2County2 <- renderUI({selectInput("Item2County2", "Select the second county to visualize", listCountiesItem2Cmp2())})
+
+listStatesItem2Cmp3 <- reactive(unique(allData[allData$Year==input$Item2Year3,]['State']))
+output$Item2State3 <- renderUI({selectInput("Item2State3", "Select the third State to visualize", listStatesItem2Cmp3())})
+listCountiesItem2Cmp3 <- reactive(unique(allData[allData$State==input$Item2State3 & allData$Year==input$Item2Year3,]['County']))
+output$Item2County3 <- renderUI({selectInput("Item2County3", "Select the third county to visualize", listCountiesItem2Cmp3())})
+
+listStatesItem3Cmp1 <- reactive(unique(allData[allData$Year==input$Item3Year1,]['State']))
+output$Item3State1 <- renderUI({selectInput("Item3State1", "Select the first State to visualize", listStatesItem3Cmp1())})
+listCountiesItem3Cmp1 <- reactive(unique(allData[allData$State==input$Item3State1 & allData$Year==input$Item3Year1,]['County']))
+output$Item3County1 <- renderUI({selectInput("Item3County1", "Select the first county to visualize", listCountiesItem3Cmp1())})
+
+listStatesItem3Cmp2 <- reactive(unique(allData[allData$Year==input$Item3Year2,]['State']))
+output$Item3State2 <- renderUI({selectInput("Item3State2", "Select the second State to visualize", listStatesItem3Cmp2())})
+listCountiesItem3Cmp2 <- reactive(unique(allData[allData$State==input$Item3State2 & allData$Year==input$Item3Year2,]['County']))
+output$Item3County2 <- renderUI({selectInput("Item3County2", "Select the second county to visualize", listCountiesItem3Cmp2())})
+
+listStatesItem3Cmp3 <- reactive(unique(allData[allData$Year==input$Item3Year3,]['State']))
+output$Item3State3 <- renderUI({selectInput("Item3State3", "Select the third State to visualize", listStatesItem3Cmp3())})
+listCountiesItem3Cmp3 <- reactive(unique(allData[allData$State==input$Item3State3 & allData$Year==input$Item3Year3,]['County']))
+output$Item3County3 <- renderUI({selectInput("Item3County3", "Select the third county to visualize", listCountiesItem3Cmp3())})
+
 justOneCountyReactive <- reactive(subset(allData, (allData$Year) == input$Year & allData$State==input$State & (allData$County== input$County)))
 
 justOneCountyReactive2 <- reactive(subset(allData, (allData$State==input$State & (allData$County== input$County))))
@@ -260,6 +422,31 @@ justOneCountyReactive2Cmp2 <- reactive(subset(allData, (allData$State==input$Sta
 justOneCountyReactiveCmp3 <- reactive(subset(allData, (allData$Year) == input$Year3 & allData$State==input$State3& (allData$County== input$County3)))
 
 justOneCountyReactive2Cmp3 <- reactive(subset(allData, (allData$State==input$State3 & (allData$County== input$County3))))
+
+justOneCountyReactiveItem2Cmp1 <- reactive(subset(allData, (allData$Year) == input$Item2Year1 & allData$State==input$Item2State1& (allData$County== input$Item2County1)))
+
+justOneCountyReactive2Item2Cmp1 <- reactive(subset(allData, (allData$State==input$Item2State1 & (allData$County== input$Item2County1))))
+
+justOneCountyReactiveItem2Cmp2 <- reactive(subset(allData, (allData$Year) == input$Item2Year2 & allData$State==input$Item2State2 & (allData$County== input$Item2County2)))
+
+justOneCountyReactive2Item2Cmp2 <- reactive(subset(allData, (allData$State==input$Item2State2 & (allData$County== input$Item2County2))))
+
+justOneCountyReactiveItem2Cmp3 <- reactive(subset(allData, (allData$Year) == input$Item2Year3 & allData$State==input$Item2State3 & (allData$County== input$Item2County3)))
+
+justOneCountyReactive2Item2Cmp3 <- reactive(subset(allData, (allData$State==input$Item2State3 & (allData$County== input$Item2County3))))
+
+
+justOneCountyReactiveItem3Cmp1 <- reactive(subset(allData, (allData$Year) == input$Item3Year1 & allData$State==input$Item3State1& (allData$County== input$Item3County1)))
+
+justOneCountyReactive2Item3Cmp1 <- reactive(subset(allData, (allData$State==input$Item3State1 & (allData$County== input$Item3County1))))
+
+justOneCountyReactiveItem3Cmp2 <- reactive(subset(allData, (allData$Year) == input$Item3Year2 & allData$State==input$Item3State2 & (allData$County== input$Item3County2)))
+
+justOneCountyReactive2Item3Cmp2 <- reactive(subset(allData, (allData$State==input$Item3State2 & (allData$County== input$Item3County2))))
+
+justOneCountyReactiveItem3Cmp3 <- reactive(subset(allData, (allData$Year) == input$Item3Year3 & allData$State==input$Item3State3 & (allData$County== input$Item3County3)))
+
+justOneCountyReactive2Item3Cmp3 <- reactive(subset(allData, (allData$State==input$Item3State3 & (allData$County== input$Item3County3))))
 
 
 # show a pie chart of the percentage of days for a given county for a given year
@@ -509,6 +696,52 @@ output$barCmp3 <- renderPlot({
     pie(df_per_main_pollutant$value, main = "CO as main pollutant" , labels = lbls, radius = 0.8)
   })
   # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2pieCOCmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mPCO <- newCounty$Days.CO
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPCO <- round((mPCO/numAQIDays)*100,2)
+    
+    df_per_main_pollutant <- data.frame(group = c("CO"),
+                                        value = c(per_mPCO,100-per_mPCO))
+    lbls <- c("CO  ")
+    lbls <- paste(lbls, per_mPCO) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "CO as main pollutant" , labels = lbls, radius = 0.8)
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2pieCOCmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mPCO <- newCounty$Days.CO
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPCO <- round((mPCO/numAQIDays)*100,2)
+    
+    df_per_main_pollutant <- data.frame(group = c("CO"),
+                                        value = c(per_mPCO,100-per_mPCO))
+    lbls <- c("CO  ")
+    lbls <- paste(lbls, per_mPCO) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "CO as main pollutant" , labels = lbls, radius = 0.8)
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2pieCOCmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mPCO <- newCounty$Days.CO
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPCO <- round((mPCO/numAQIDays)*100,2)
+    
+    df_per_main_pollutant <- data.frame(group = c("CO"),
+                                        value = c(per_mPCO,100-per_mPCO))
+    lbls <- c("CO  ")
+    lbls <- paste(lbls, per_mPCO) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "CO as main pollutant" , labels = lbls, radius = 0.8)
+  })
+  
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
   output$pieNO2 <- renderPlot({
     newCounty <-  justOneCountyReactive()
     mPNO2 <- newCounty$Days.NO2
@@ -522,6 +755,46 @@ output$barCmp3 <- renderPlot({
     
     pie(df_per_main_pollutant$value, main = "NO2 as main pollutant",labels = lbls, radius = 0.8)
   })
+  output$Item2pieNO2Cmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mPNO2 <- newCounty$Days.NO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPNO2 <-round((mPNO2/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "NO2"),
+                                        value = c(per_mPNO2,100-per_mPNO2))
+    lbls <- c("NO2  ")
+    lbls <- paste(lbls, per_mPNO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "NO2 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  output$Item2pieNO2Cmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mPNO2 <- newCounty$Days.NO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPNO2 <-round((mPNO2/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "NO2"),
+                                        value = c(per_mPNO2,100-per_mPNO2))
+    lbls <- c("NO2  ")
+    lbls <- paste(lbls, per_mPNO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "NO2 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  output$Item2pieNO2Cmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mPNO2 <- newCounty$Days.NO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPNO2 <-round((mPNO2/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "NO2"),
+                                        value = c(per_mPNO2,100-per_mPNO2))
+    lbls <- c("NO2  ")
+    lbls <- paste(lbls, per_mPNO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "NO2 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  
   # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
   output$pieOzone <- renderPlot({
     newCounty <-  justOneCountyReactive()
@@ -537,7 +810,50 @@ output$barCmp3 <- renderPlot({
     
     pie(df_per_main_pollutant$value,main = "Ozone as main pollutant", labels = lbls, radius = 0.8)
   })
-  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2pieOzoneCmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mPOzone <- newCounty$Days.Ozone
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPOzone <- round((mPOzone/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "Ozone" ),
+                                        value = c(per_mPOzone,100-per_mPOzone))
+    
+    lbls <- c("Ozone  ")
+    lbls <- paste(lbls, per_mPOzone) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "Ozone as main pollutant", labels = lbls, radius = 0.8)
+  })
+  output$Item2pieOzoneCmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mPOzone <- newCounty$Days.Ozone
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPOzone <- round((mPOzone/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "Ozone" ),
+                                        value = c(per_mPOzone,100-per_mPOzone))
+    
+    lbls <- c("Ozone  ")
+    lbls <- paste(lbls, per_mPOzone) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "Ozone as main pollutant", labels = lbls, radius = 0.8)
+  })
+  output$Item2pieOzoneCmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mPOzone <- newCounty$Days.Ozone
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPOzone <- round((mPOzone/numAQIDays)*100,5)
+    df_per_main_pollutant <- data.frame(group = c( "Ozone" ),
+                                        value = c(per_mPOzone,100-per_mPOzone))
+    
+    lbls <- c("Ozone  ")
+    lbls <- paste(lbls, per_mPOzone) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "Ozone as main pollutant", labels = lbls, radius = 0.8)
+  })
+  
+   # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
   output$pieSO2 <- renderPlot({
     newCounty <-  justOneCountyReactive()
     mPSO2 <- newCounty$Days.SO2
@@ -553,7 +869,53 @@ output$barCmp3 <- renderPlot({
     
     pie(df_per_main_pollutant$value,main = "SO2 as main pollutant", labels = lbls, radius = 0.8)
   })
-  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2pieSO2Cmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mPSO2 <- newCounty$Days.SO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPSO2 <- round((mPSO2/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c( "SO2"),
+                                        value = c(per_mPSO2,100-per_mPSO2))
+    
+    lbls <- c("SO2  ")
+    lbls <- paste(lbls, per_mPSO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "SO2 as main pollutant", labels = lbls, radius = 0.8)
+  })
+  output$Item2pieSO2Cmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mPSO2 <- newCounty$Days.SO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPSO2 <- round((mPSO2/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c( "SO2"),
+                                        value = c(per_mPSO2,100-per_mPSO2))
+    
+    lbls <- c("SO2  ")
+    lbls <- paste(lbls, per_mPSO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "SO2 as main pollutant", labels = lbls, radius = 0.8)
+  })
+  output$Item2pieSO2Cmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mPSO2 <- newCounty$Days.SO2
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mPSO2 <- round((mPSO2/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c( "SO2"),
+                                        value = c(per_mPSO2,100-per_mPSO2))
+    
+    lbls <- c("SO2  ")
+    lbls <- paste(lbls, per_mPSO2) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value,main = "SO2 as main pollutant", labels = lbls, radius = 0.8)
+  })
+  
+   # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
   output$piePM2.5 <- renderPlot({
     newCounty <-  justOneCountyReactive()
     mP_PM2.5<- newCounty$Days.PM2.5    
@@ -569,6 +931,52 @@ output$barCmp3 <- renderPlot({
     pie(df_per_main_pollutant$value, main = "PM2.5 as main pollutant",labels = lbls, radius = 0.8)
   })
   # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM2.5Cmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM2.5 <- round((mP_PM2.5/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c("PM2.5" ),
+                                        value = c(per_mP_PM2.5,100-per_mP_PM2.5))
+    lbls <- c("PM2.5  ")
+    lbls <- paste(lbls, per_mP_PM2.5) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "PM2.5 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM2.5Cmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM2.5 <- round((mP_PM2.5/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c("PM2.5" ),
+                                        value = c(per_mP_PM2.5,100-per_mP_PM2.5))
+    lbls <- c("PM2.5  ")
+    lbls <- paste(lbls, per_mP_PM2.5) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "PM2.5 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM2.5Cmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM2.5 <- round((mP_PM2.5/numAQIDays)*100,5)
+    
+    df_per_main_pollutant <- data.frame(group = c("PM2.5" ),
+                                        value = c(per_mP_PM2.5,100-per_mP_PM2.5))
+    lbls <- c("PM2.5  ")
+    lbls <- paste(lbls, per_mP_PM2.5) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    pie(df_per_main_pollutant$value, main = "PM2.5 as main pollutant",labels = lbls, radius = 0.8)
+  })
+  
+    # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
   output$piePM10 <- renderPlot({
     newCounty <-  justOneCountyReactive()
     mP_PM10 <- newCounty$Days.PM10
@@ -584,6 +992,57 @@ output$barCmp3 <- renderPlot({
     
     pie(df_per_main_pollutant$value, main = "PM10 as main pollutant",labels = lbls, radius = 0.8)
 
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM10Cmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mP_PM10 <- newCounty$Days.PM10
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM10 <- round((mP_PM10/numAQIDays)*100)
+    
+    lbls <- c("PM10  ")
+    lbls <- paste(lbls, per_mP_PM10) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    df_per_main_pollutant <- data.frame(group = c("PM10"),
+                                        value = c(per_mP_PM10,100-per_mP_PM10))
+    
+    pie(df_per_main_pollutant$value, main = "PM10 as main pollutant",labels = lbls, radius = 0.8)
+    
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM10Cmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mP_PM10 <- newCounty$Days.PM10
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM10 <- round((mP_PM10/numAQIDays)*100)
+    
+    lbls <- c("PM10  ")
+    lbls <- paste(lbls, per_mP_PM10) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    df_per_main_pollutant <- data.frame(group = c("PM10"),
+                                        value = c(per_mP_PM10,100-per_mP_PM10))
+    
+    pie(df_per_main_pollutant$value, main = "PM10 as main pollutant",labels = lbls, radius = 0.8)
+    
+  })
+  # show a pie chart of the percentage of days as the main pollutant for a given county for a given year
+  output$Item2piePM10Cmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mP_PM10 <- newCounty$Days.PM10
+    numAQIDays <- newCounty$Days.with.AQI
+    per_mP_PM10 <- round((mP_PM10/numAQIDays)*100)
+    
+    lbls <- c("PM10  ")
+    lbls <- paste(lbls, per_mP_PM10) # add percents to labels 
+    lbls <- paste(lbls,"%",sep="") # ad % to labels 
+    
+    df_per_main_pollutant <- data.frame(group = c("PM10"),
+                                        value = c(per_mP_PM10,100-per_mP_PM10))
+    
+    pie(df_per_main_pollutant$value, main = "PM10 as main pollutant",labels = lbls, radius = 0.8)
+    
   })
   
   # show a bar chart of the number of days as the main pollutant for a given county for a given year
@@ -606,7 +1065,68 @@ output$barCmp3 <- renderPlot({
     labs(x="Pollutant name ", y = "Number of days as main pollutant")+  ggtitle("Bar Chart for Pollutants")+theme(plot.title = element_text(hjust = 0.5))+theme(axis.text.x = element_text(angle = 90, hjust = 1))
   
   })
-  # use DT to help out with the tables - https://datatables.net/reference/option/
+  # show a bar chart of the number of days as the main pollutant for a given county for a given year
+  output$Item2bar2Cmp1 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp1()
+    mPCO <- newCounty$Days.CO
+    mPNO2 <- newCounty$Days.NO2
+    mPOzone <- newCounty$Days.Ozone
+    mPSO2 <- newCounty$Days.SO2
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    mP_PM10 <- newCounty$Days.PM10
+    
+    
+    df_num_days <- data.frame(group = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                              value = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+    df_num_days <- df_num_days[order(df_num_days$value),]
+    df_num_days$group <- factor(df_num_days$group, levels = df_num_days$group[order(-df_num_days$value)])
+    
+    ggplot(df_num_days, aes(x=df_num_days$group, y=df_num_days$value)) + geom_bar(stat="identity", fill="steelblue") +
+      labs(x="Pollutant name ", y = "Number of days as main pollutant")+  ggtitle("Bar Chart for Pollutants")+theme(plot.title = element_text(hjust = 0.5))+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    
+  })
+  output$Item2bar2Cmp2 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp2()
+    mPCO <- newCounty$Days.CO
+    mPNO2 <- newCounty$Days.NO2
+    mPOzone <- newCounty$Days.Ozone
+    mPSO2 <- newCounty$Days.SO2
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    mP_PM10 <- newCounty$Days.PM10
+    
+    
+    df_num_days <- data.frame(group = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                              value = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+    df_num_days <- df_num_days[order(df_num_days$value),]
+    df_num_days$group <- factor(df_num_days$group, levels = df_num_days$group[order(-df_num_days$value)])
+    
+    ggplot(df_num_days, aes(x=df_num_days$group, y=df_num_days$value)) + geom_bar(stat="identity", fill="steelblue") +
+      labs(x="Pollutant name ", y = "Number of days as main pollutant")+  ggtitle("Bar Chart for Pollutants")+theme(plot.title = element_text(hjust = 0.5))+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    
+  })
+  
+  output$Item2bar2Cmp3 <- renderPlot({
+    newCounty <-  justOneCountyReactiveItem2Cmp3()
+    mPCO <- newCounty$Days.CO
+    mPNO2 <- newCounty$Days.NO2
+    mPOzone <- newCounty$Days.Ozone
+    mPSO2 <- newCounty$Days.SO2
+    mP_PM2.5<- newCounty$Days.PM2.5    
+    mP_PM10 <- newCounty$Days.PM10
+    
+    
+    df_num_days <- data.frame(group = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                              value = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+    df_num_days <- df_num_days[order(df_num_days$value),]
+    df_num_days$group <- factor(df_num_days$group, levels = df_num_days$group[order(-df_num_days$value)])
+    
+    ggplot(df_num_days, aes(x=df_num_days$group, y=df_num_days$value)) + geom_bar(stat="identity", fill="steelblue") +
+      labs(x="Pollutant name ", y = "Number of days as main pollutant")+  ggtitle("Bar Chart for Pollutants")+theme(plot.title = element_text(hjust = 0.5))+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    
+  })
+  
+  
+   # use DT to help out with the tables - https://datatables.net/reference/option/
   output$table <- DT::renderDataTable(
     DT::datatable({ 
       newCounty <-  justOneCountyReactive()
@@ -695,7 +1215,65 @@ output$barCmp3 <- renderPlot({
     ), rownames = FALSE 
     )
   )
-  output$tableCO <- DT::renderDataTable(
+  output$Item2table2Cmp1 <- DT::renderDataTable(
+    DT::datatable({ 
+      
+      newCounty <-  justOneCountyReactiveItem2Cmp1()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      df_num_days <- data.frame(MainPollutant = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                                NumberOfDays = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+      
+    },
+    options = list(searching = FALSE, pageLength = 6, lengthChange = FALSE, order = list(list(1, 'desc'))
+    ), rownames = FALSE 
+    )
+  )
+  output$Item2table2Cmp2 <- DT::renderDataTable(
+    DT::datatable({ 
+      
+      newCounty <-  justOneCountyReactiveItem2Cmp2()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      df_num_days <- data.frame(MainPollutant = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                                NumberOfDays = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+      
+    },
+    options = list(searching = FALSE, pageLength = 6, lengthChange = FALSE, order = list(list(1, 'desc'))
+    ), rownames = FALSE 
+    )
+  )
+  output$Item2table2Cmp3 <- DT::renderDataTable(
+    DT::datatable({ 
+      
+      newCounty <-  justOneCountyReactiveItem2Cmp3()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      df_num_days <- data.frame(MainPollutant = c( "CO" , "NO2" , "Ozone", "SO2", "PM2.5" ,"PM10"),
+                                NumberOfDays = c(mPCO,mPNO2, mPOzone, mPSO2, mP_PM2.5,mP_PM10))
+      
+    },
+    options = list(searching = FALSE, pageLength = 6, lengthChange = FALSE, order = list(list(1, 'desc'))
+    ), rownames = FALSE 
+    )
+  )
+  
+    output$tableCO <- DT::renderDataTable(
     DT::datatable({ 
 
       newCounty <- justOneCountyReactive2()
@@ -710,7 +1288,53 @@ output$barCmp3 <- renderPlot({
     ), rownames = FALSE 
     )
   )
-  output$tableNO2 <- DT::renderDataTable(
+    output$Item3tableCOCmp1 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp1()
+        mPCO <- newCounty$Days.CO
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPCO = mPCO/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPCO))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$Item3tableCOCmp2 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp2()
+        mPCO <- newCounty$Days.CO
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPCO = mPCO/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPCO))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$Item3tableCOCmp3 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp3()
+        mPCO <- newCounty$Days.CO
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPCO = mPCO/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPCO))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    
+      output$tableNO2 <- DT::renderDataTable(
     DT::datatable({ 
       newCounty <- justOneCountyReactive2()
       mPNO2 <- newCounty$Days.NO2
@@ -724,7 +1348,49 @@ output$barCmp3 <- renderPlot({
     ), rownames = FALSE 
     )
   )
-  
+      output$Item3tableNO2Cmp1 <- DT::renderDataTable(
+        DT::datatable({ 
+          newCounty <- justOneCountyReactive2Item3Cmp3()
+          mPNO2 <- newCounty$Days.NO2
+          numAQIDays <- newCounty$Days.with.AQI
+          per_mPNO2 = mPNO2/numAQIDays
+          
+          df_num_days <- data.frame(year = newCounty$Year,
+                                    percent = c(per_mPNO2))
+        },
+        options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+        ), rownames = FALSE 
+        )
+      )
+      output$Item3tableNO2Cmp2 <- DT::renderDataTable(
+        DT::datatable({ 
+          newCounty <- justOneCountyReactive2Item3Cmp2()
+          mPNO2 <- newCounty$Days.NO2
+          numAQIDays <- newCounty$Days.with.AQI
+          per_mPNO2 = mPNO2/numAQIDays
+          
+          df_num_days <- data.frame(year = newCounty$Year,
+                                    percent = c(per_mPNO2))
+        },
+        options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+        ), rownames = FALSE 
+        )
+      )
+      output$Item3tableNO2Cmp3 <- DT::renderDataTable(
+        DT::datatable({ 
+          newCounty <- justOneCountyReactive2Item3Cmp3()
+          mPNO2 <- newCounty$Days.NO2
+          numAQIDays <- newCounty$Days.with.AQI
+          per_mPNO2 = mPNO2/numAQIDays
+          
+          df_num_days <- data.frame(year = newCounty$Year,
+                                    percent = c(per_mPNO2))
+        },
+        options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+        ), rownames = FALSE 
+        )
+      )
+      
     output$tableOzone <- DT::renderDataTable(
     DT::datatable({ 
       newCounty <- justOneCountyReactive2()
@@ -739,6 +1405,49 @@ output$barCmp3 <- renderPlot({
     ), rownames = FALSE 
     )
   )
+    output$Item3tableOzoneCmp1 <- DT::renderDataTable(
+      DT::datatable({ 
+        newCounty <- justOneCountyReactive2Item3Cmp1()
+        mPOzone <- newCounty$Days.Ozone
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPOzone = mPOzone/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPOzone))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$Item3tableOzoneCmp2<- DT::renderDataTable(
+      DT::datatable({ 
+        newCounty <- justOneCountyReactive2Item3Cmp2()
+        mPOzone <- newCounty$Days.Ozone
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPOzone = mPOzone/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPOzone))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$Item3tableOzoneCmp3 <- DT::renderDataTable(
+      DT::datatable({ 
+        newCounty <- justOneCountyReactive2Item3Cmp3()
+        mPOzone <- newCounty$Days.Ozone
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPOzone = mPOzone/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPOzone))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    
     output$tableSO2 <- DT::renderDataTable(
       DT::datatable({ 
 
@@ -754,7 +1463,53 @@ output$barCmp3 <- renderPlot({
       ), rownames = FALSE 
       )
     )
-    output$tablePM2.5 <- DT::renderDataTable(
+    output$Item3tableSO2Cmp1 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp1()
+        mPSO2 <- newCounty$Days.SO2
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPSO2 = mPSO2/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPSO2))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$tableSO2Cmp2 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp2()
+        mPSO2 <- newCounty$Days.SO2
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPSO2 = mPSO2/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPSO2))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    output$Item3tableSO2Cmp3 <- DT::renderDataTable(
+      DT::datatable({ 
+        
+        newCounty <- justOneCountyReactive2Item3Cmp3()
+        mPSO2 <- newCounty$Days.SO2
+        numAQIDays <- newCounty$Days.with.AQI
+        per_mPSO2 = mPSO2/numAQIDays
+        
+        df_num_days <- data.frame(year = newCounty$Year,
+                                  percent = c(per_mPSO2))
+      },
+      options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+      ), rownames = FALSE 
+      )
+    )
+    
+        output$tablePM2.5 <- DT::renderDataTable(
       DT::datatable({ 
 
         newCounty <- justOneCountyReactive2()
@@ -768,7 +1523,50 @@ output$barCmp3 <- renderPlot({
       ), rownames = FALSE 
       )
     )
-    output$tablePM10 <- DT::renderDataTable(
+
+        output$Item3tablePM2.5Cmp1 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactiveItem3Cmp1()
+            mP_PM2.5 <- newCounty$Days.PM2.5
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM2.5 = mP_PM2.5/numAQIDays
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM2.5))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        output$Item3tablePM2.5Cmp2 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactiveItem3Cmp2()
+            mP_PM2.5 <- newCounty$Days.PM2.5
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM2.5 = mP_PM2.5/numAQIDays
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM2.5))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        output$Item3tablePM2.5Cmp3 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactiveItem3Cmp3()
+            mP_PM2.5 <- newCounty$Days.PM2.5
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM2.5 = mP_PM2.5/numAQIDays
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM2.5))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        output$tablePM10 <- DT::renderDataTable(
       DT::datatable({ 
 
         newCounty <- justOneCountyReactive2()
@@ -783,7 +1581,53 @@ output$barCmp3 <- renderPlot({
       ), rownames = FALSE 
       )
     )
-    
+
+        output$Item3tablePM10Cmp1 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactive2Item3Cmp1()
+            mP_PM10 <- newCounty$Days.PM10
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM10 = mP_PM10/numAQIDays
+            
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM10))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        output$Item3tablePM10Cmp2 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactive2Item3Cmp2()
+            mP_PM10 <- newCounty$Days.PM10
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM10 = mP_PM10/numAQIDays
+            
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM10))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        output$Item3tablePM10Cmp3 <- DT::renderDataTable(
+          DT::datatable({ 
+            
+            newCounty <- justOneCountyReactive2Item3Cmp3()
+            mP_PM10 <- newCounty$Days.PM10
+            numAQIDays <- newCounty$Days.with.AQI
+            per_mP_PM10 = mP_PM10/numAQIDays
+            
+            df_num_days <- data.frame(year = newCounty$Year,
+                                      percent = c(per_mP_PM10))
+          },
+          options = list(searching = FALSE, pageLength = 10, lengthChange = FALSE, order = list(list(1, 'asec'))
+          ), rownames = FALSE 
+          )
+        )
+        
   output$tabset1Selected <- renderText({
     input$tabset1
   })
@@ -802,7 +1646,35 @@ output$barCmp3 <- renderPlot({
       geom_line(aes(y=newCounty$Max.AQI,color="Max AQI"))+
       scale_colour_manual(name="AQI value",values = c("Median AQI" = "red", "90th.Percentile" = "blue", "Max AQI" = "brown"))+ labs(y="AQI value")
     })
-  output$line2 <- renderPlot({
+  output$Item3line1Cmp1 <- renderPlot({
+    # Basic line plot
+    newCounty <- justOneCountyReactive2Item3Cmp1()
+    ggplot(data=newCounty, aes(x=Year))+
+      geom_line(aes(y=newCounty$Median.AQI,color="Median AQI"))+
+      geom_line(aes(y=newCounty$X90th.Percentile.AQI,color="90th.Percentile"))+
+      geom_line(aes(y=newCounty$Max.AQI,color="Max AQI"))+
+      scale_colour_manual(name="AQI value",values = c("Median AQI" = "red", "90th.Percentile" = "blue", "Max AQI" = "brown"))+ labs(y="AQI value")
+  })
+  output$Item3line1Cmp2 <- renderPlot({
+    # Basic line plot
+    newCounty <- justOneCountyReactive2Item3Cmp2()
+    ggplot(data=newCounty, aes(x=Year))+
+      geom_line(aes(y=newCounty$Median.AQI,color="Median AQI"))+
+      geom_line(aes(y=newCounty$X90th.Percentile.AQI,color="90th.Percentile"))+
+      geom_line(aes(y=newCounty$Max.AQI,color="Max AQI"))+
+      scale_colour_manual(name="AQI value",values = c("Median AQI" = "red", "90th.Percentile" = "blue", "Max AQI" = "brown"))+ labs(y="AQI value")
+  })
+  output$Item3line1Cmp3 <- renderPlot({
+    # Basic line plot
+    newCounty <- justOneCountyReactive2Item3Cmp3()
+    ggplot(data=newCounty, aes(x=Year))+
+      geom_line(aes(y=newCounty$Median.AQI,color="Median AQI"))+
+      geom_line(aes(y=newCounty$X90th.Percentile.AQI,color="90th.Percentile"))+
+      geom_line(aes(y=newCounty$Max.AQI,color="Max AQI"))+
+      scale_colour_manual(name="AQI value",values = c("Median AQI" = "red", "90th.Percentile" = "blue", "Max AQI" = "brown"))+ labs(y="AQI value")
+  })
+  
+    output$line2 <- renderPlot({
     # Basic line plot
     newCounty <- justOneCountyReactive2()
     mPCO <- newCounty$Days.CO
@@ -830,15 +1702,116 @@ output$barCmp3 <- renderPlot({
       geom_line(aes(y=per_mP_PM10,color="PM10"))+
       scale_colour_manual(name="Pollutant",values = c("CO" = "red", "NO2" = "blue", "Ozone" = "brown","SO2" = "orange", "PM2.5" = "green", "PM10" = "purple"))+ labs(y="Percent")
   })
-  output$leaf <- renderLeaflet({
+    output$Item3line2Cmp1 <- renderPlot({
+      # Basic line plot
+      newCounty <- justOneCountyReactive2Item3Cmp1()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      numAQIDays <- newCounty$Days.with.AQI
+      
+      per_mPCO = mPCO/numAQIDays
+      per_mPNO2 = mPNO2/numAQIDays
+      per_mPOzone = mPOzone/numAQIDays
+      per_mPSO2 = mPSO2/numAQIDays
+      per_mP_PM2.5 = mP_PM2.5/numAQIDays
+      per_mP_PM10 = mP_PM10/numAQIDays
+      
+      ggplot(data=newCounty, aes(x=Year))+
+        geom_line(aes(y=per_mPCO,color="CO"))+
+        geom_line(aes(y=per_mPNO2,color="NO2"))+
+        geom_line(aes(y=per_mPOzone,color="Ozone"))+
+        geom_line(aes(y=per_mPSO2,color="SO2"))+
+        geom_line(aes(y=per_mP_PM2.5,color="PM2.5"))+
+        geom_line(aes(y=per_mP_PM10,color="PM10"))+
+        scale_colour_manual(name="Pollutant",values = c("CO" = "red", "NO2" = "blue", "Ozone" = "brown","SO2" = "orange", "PM2.5" = "green", "PM10" = "purple"))+ labs(y="Percent")
+    })
+    output$Item3line2Cmp2 <- renderPlot({
+      # Basic line plot
+      newCounty <- justOneCountyReactive2Item3Cmp2()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      numAQIDays <- newCounty$Days.with.AQI
+      
+      per_mPCO = mPCO/numAQIDays
+      per_mPNO2 = mPNO2/numAQIDays
+      per_mPOzone = mPOzone/numAQIDays
+      per_mPSO2 = mPSO2/numAQIDays
+      per_mP_PM2.5 = mP_PM2.5/numAQIDays
+      per_mP_PM10 = mP_PM10/numAQIDays
+      
+      ggplot(data=newCounty, aes(x=Year))+
+        geom_line(aes(y=per_mPCO,color="CO"))+
+        geom_line(aes(y=per_mPNO2,color="NO2"))+
+        geom_line(aes(y=per_mPOzone,color="Ozone"))+
+        geom_line(aes(y=per_mPSO2,color="SO2"))+
+        geom_line(aes(y=per_mP_PM2.5,color="PM2.5"))+
+        geom_line(aes(y=per_mP_PM10,color="PM10"))+
+        scale_colour_manual(name="Pollutant",values = c("CO" = "red", "NO2" = "blue", "Ozone" = "brown","SO2" = "orange", "PM2.5" = "green", "PM10" = "purple"))+ labs(y="Percent")
+    })
+    output$Item3line2Cmp3 <- renderPlot({
+      # Basic line plot
+      newCounty <- justOneCountyReactive2Item3Cmp3()
+      mPCO <- newCounty$Days.CO
+      mPNO2 <- newCounty$Days.NO2
+      mPOzone <- newCounty$Days.Ozone
+      mPSO2 <- newCounty$Days.SO2
+      mP_PM2.5<- newCounty$Days.PM2.5    
+      mP_PM10 <- newCounty$Days.PM10
+      
+      numAQIDays <- newCounty$Days.with.AQI
+      
+      per_mPCO = mPCO/numAQIDays
+      per_mPNO2 = mPNO2/numAQIDays
+      per_mPOzone = mPOzone/numAQIDays
+      per_mPSO2 = mPSO2/numAQIDays
+      per_mP_PM2.5 = mP_PM2.5/numAQIDays
+      per_mP_PM10 = mP_PM10/numAQIDays
+      
+      ggplot(data=newCounty, aes(x=Year))+
+        geom_line(aes(y=per_mPCO,color="CO"))+
+        geom_line(aes(y=per_mPNO2,color="NO2"))+
+        geom_line(aes(y=per_mPOzone,color="Ozone"))+
+        geom_line(aes(y=per_mPSO2,color="SO2"))+
+        geom_line(aes(y=per_mP_PM2.5,color="PM2.5"))+
+        geom_line(aes(y=per_mP_PM10,color="PM10"))+
+        scale_colour_manual(name="Pollutant",values = c("CO" = "red", "NO2" = "blue", "Ozone" = "brown","SO2" = "orange", "PM2.5" = "green", "PM10" = "purple"))+ labs(y="Percent")
+    })
+    
+      output$Item3leafCmp1 <- renderLeaflet({
     map <- leaflet()
     map <- addTiles(map)
-    newcounty <- subset(aqs_sites, aqs_sites$County.Name== input$County & aqs_sites$State.Name==input$State)
+    newcounty <- subset(aqs_sites, aqs_sites$County.Name== input$Item3County1 & aqs_sites$State.Name==input$Item3State1)
     map <- setView(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, zoom = 18)
-    map <- addMarkers(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, popup = input$County)
+    map <- addMarkers(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, popup = input$Item3County1)
     map
   })
-  
+      output$Item3leafCmp2 <- renderLeaflet({
+        map <- leaflet()
+        map <- addTiles(map)
+        newcounty <- subset(aqs_sites, aqs_sites$County.Name== input$Item3County1 & aqs_sites$State.Name==input$Item3State1)
+        map <- setView(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, zoom = 18)
+        map <- addMarkers(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, popup = input$Item3County1)
+        map
+      })
+      output$Item3leafCmp3 <- renderLeaflet({
+        map <- leaflet()
+        map <- addTiles(map)
+        newcounty <- subset(aqs_sites, aqs_sites$County.Name== input$Item3County1 & aqs_sites$State.Name==input$Item3State1)
+        map <- setView(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, zoom = 18)
+        map <- addMarkers(map, lng = newcounty[1,]$Longitude, lat = newcounty[1,]$Latitude, popup = input$Item3County1)
+        map
+      })
+      
   
 }
 
